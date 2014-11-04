@@ -5,6 +5,17 @@
     complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>forms.ecore</foreignModel>
   <genPackages prefix="Forms" disposableProviderFactory="true" ecorePackage="forms.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="forms.ecore#//AttributeType">
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Text"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Date"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Time"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Year"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Email"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/None"/>
+    </genEnums>
     <genClasses ecoreClass="forms.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Entity/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Entity/attributes"/>
@@ -12,6 +23,7 @@
     <genClasses ecoreClass="forms.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Attribute/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Attribute/mandatory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Attribute/type"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
