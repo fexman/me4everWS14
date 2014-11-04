@@ -19,11 +19,21 @@
     <genClasses ecoreClass="forms.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Entity/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Entity/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Entity/identifier"/>
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Attribute/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Attribute/mandatory"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Attribute/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Attribute/enumerationType"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Enumeration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Enumeration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Enumeration/consists"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Literal/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Literal/Value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
