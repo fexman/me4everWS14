@@ -52,6 +52,13 @@
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//Page">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Page/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Page/contains"/>
     </genClasses>
+    <genClasses ecoreClass="forms.ecore#//PageElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//PageElement/elementID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//PageElement/label"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//AttributePageElement"/>
+    <genClasses ecoreClass="forms.ecore#//RelationshipPageElement"/>
   </genPackages>
 </genmodel:GenModel>

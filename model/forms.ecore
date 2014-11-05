@@ -54,5 +54,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Page">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
+        eType="#//PageElement" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributePageElement" eSuperTypes="#//PageElement #//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipPageElement" eSuperTypes="#//PageElement #//Relationship"/>
 </ecore:EPackage>
