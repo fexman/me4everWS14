@@ -48,6 +48,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/isWelcomeForm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Form/consists"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Page">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Page/title"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
