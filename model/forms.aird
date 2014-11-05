@@ -175,7 +175,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_e_J-9mTcEeSKKcZ8rvXY2g"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_e_J-8WTcEeSKKcZ8rvXY2g" fontName="Segoe UI" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e_J-8mTcEeSKKcZ8rvXY2g" x="252" y="72"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e_J-8mTcEeSKKcZ8rvXY2g" x="228" y="96"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_IDRnIGTeEeSKKcZ8rvXY2g" type="2003" element="_IC-sMGTeEeSKKcZ8rvXY2g">
             <children xmi:type="notation:Node" xmi:id="_IDRnI2TeEeSKKcZ8rvXY2g" type="5007"/>
@@ -464,7 +464,7 @@
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_GnzSMGTfEeSKKcZ8rvXY2g" type="4001" element="_GnWmQGTfEeSKKcZ8rvXY2g" source="_K7Qg4GTeEeSKKcZ8rvXY2g" target="_IXSo8GTWEeSKKcZ8rvXY2g">
             <children xmi:type="notation:Node" xmi:id="_GnzSNGTfEeSKKcZ8rvXY2g" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GnzSNWTfEeSKKcZ8rvXY2g" y="-10"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GnzSNWTfEeSKKcZ8rvXY2g" x="61"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_GnzSNmTfEeSKKcZ8rvXY2g" type="6002">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GnzSN2TfEeSKKcZ8rvXY2g" y="10"/>
