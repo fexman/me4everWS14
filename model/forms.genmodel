@@ -44,5 +44,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Relationship/target"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Relationship/opposite"/>
     </genClasses>
+    <genClasses ecoreClass="forms.ecore#//Form">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/isWelcomeForm"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
