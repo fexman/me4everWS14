@@ -61,13 +61,46 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AttributePageElement" eSuperTypes="#//PageElement #//Attribute"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RelationshipPageElement" eSuperTypes="#//PageElement #//Relationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributePageElement" abstract="true"
+      eSuperTypes="#//PageElement #//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipPageElement" abstract="true"
+      eSuperTypes="#//PageElement #//Relationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editing_form" lowerBound="1"
+        eType="#//Form"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextArea" eSuperTypes="#//AttributePageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelectionField" eSuperTypes="#//AttributePageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DateSelectionField" eSuperTypes="#//AttributePageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TimeSelectionField" eSuperTypes="#//AttributePageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TextField" eSuperTypes="#//AttributePageElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//RelationshipPageElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Tables" eSuperTypes="#//RelationshipPageElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="consists" upperBound="-1"
+        eType="#//Column" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="conditionType">
+    <eLiterals name="Hide"/>
+    <eLiterals name="Show"/>
+    <eLiterals name="Enable"/>
+    <eLiterals name="Disable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositionCondition" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="combinesAttributeValue"
+        upperBound="2" eType="#//AttributeValueCondition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="combinesComposite" upperBound="2"
+        eType="#//CompositionCondition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeValueCondition" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//conditionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionsPage" eType="#//Page"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionsPageElement"
+        eType="#//PageElement"/>
   </eClassifiers>
 </ecore:EPackage>
