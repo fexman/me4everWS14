@@ -57,10 +57,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
         eType="#//PageElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PageElement">
+  <eClassifiers xsi:type="ecore:EClass" name="PageElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributePageElement" eSuperTypes="#//PageElement #//Attribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="RelationshipPageElement" eSuperTypes="#//PageElement #//Relationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextArea" eSuperTypes="#//AttributePageElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectionField" eSuperTypes="#//AttributePageElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DateSelectionField" eSuperTypes="#//AttributePageElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeSelectionField" eSuperTypes="#//AttributePageElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextField" eSuperTypes="#//AttributePageElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

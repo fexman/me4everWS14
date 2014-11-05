@@ -60,5 +60,12 @@
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//AttributePageElement"/>
     <genClasses ecoreClass="forms.ecore#//RelationshipPageElement"/>
+    <genClasses ecoreClass="forms.ecore#//TextArea"/>
+    <genClasses ecoreClass="forms.ecore#//SelectionField"/>
+    <genClasses ecoreClass="forms.ecore#//DateSelectionField"/>
+    <genClasses ecoreClass="forms.ecore#//TimeSelectionField"/>
+    <genClasses ecoreClass="forms.ecore#//TextField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//TextField/format"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
