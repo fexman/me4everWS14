@@ -1,0 +1,15 @@
+1. Identifier ist Member von Entity
+2. Wenn Attribut Enumeration referenziert ist der type "none"
+3. Opposites relationships verweisen aufeinander
+4. Das target der opposite relationship ist self
+5. 0 <= lowerbound < upperbound
+	5.a) execept upperbound -1
+6. AttributePageElement muss von Entity der Form sein
+7. RelationshipPageElement muss von Entity der Form sein
+8. RelationPageElement-Table Column muss von Attribute von Entity sein
+9. Selection fields: Attribut muss Boolean/Enum
+10. Compositon exakt 2 Referenzen
+11. AttributeValueCondition --> Page xor Pagelement
+
+(+1 chain super typing)
+(~+1. Doppelcheck 1..1 identity)
