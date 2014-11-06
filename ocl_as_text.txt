@@ -1,15 +1,25 @@
-1. Identifier ist Member von Entity
-2. Wenn Attribut Enumeration referenziert ist der type "none"
-3. Opposites relationships verweisen aufeinander
-4. Das target der opposite relationship ist self
-5. 0 <= lowerbound < upperbound
-	5.a) execept upperbound -1
-6. AttributePageElement muss von Entity der Form sein
-7. RelationshipPageElement muss von Entity der Form sein
-8. RelationPageElement-Table Column muss von Attribute von Entity sein
-9. Selection fields: Attribut muss Boolean/Enum
-10. Compositon exakt 2 Referenzen
-11. AttributeValueCondition --> Page xor Pagelement
+1. invariant identifierIsMember
+	Überprüfung ob gesetzter Identifier eh auch Member von Entity ist.
+2. invariant attributeTypeNoneWhenEnum
+	Überprüfung ob Attribut-type "none", wenn Enumeration referenziert wird.
+3. invariant validBinaryRelationship
+	* Überprüfung ob Opposites der relationShips aufeinander verweisen
+	* Überprüfung ob das Target der opposite relationship wieder self ist
+4. invariant validRelationshipBounds
+	* Überprüfung ob 0 <= lowerbound < upperbound, es sei denn upperbound -1, dann
+		nur 0 <= lowerbound
+5. invariant attributePageElementMapsFormEntity
+	* Überprüfung ob Attribute von AttributePageElement von Entity der dazugehörigen Form stammt
+6. invariant relationshipPageElementMapsFormEntity
+	* Überprüfung ob Relationship von RelationshipPageElement von Entity der dazugehörigen Form stammt
+7. invariant TableClolumnElementMapsReferencedEntity
+	* Überprüfung ob Attribute von Table-Column von Entity der _REFERENZIERTEN_ Form stammt
+8. invariant validSelectionFieldType
+	* Überprüfung ob SelectionFields Attribut-type Boolean oder Enum ist.
+9. invariant validCompositCondition
+	* Überprüfung ob Compositon EXAKT 2 Conditions referenziert.
+10. invariant validAttributeValueCondition
+	* Überprüfung ob AttributeValueCondition Page EXKLUSIV ODER (xor) PageElement referenziert
 
-(+1 chain super typing)
-(~+1. Doppelcheck 1..1 identity)
+(+1 chain super typing??)
+https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53388
