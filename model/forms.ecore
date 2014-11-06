@@ -88,7 +88,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="consists" upperBound="-1"
         eType="#//Column" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Column"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Column">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refers_to" lowerBound="1"
+        eType="#//FormAttribute"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -112,6 +115,6 @@
         eType="#//PageElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormEntity" eSuperTypes="#//Entity"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FormAttribute"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FormRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormAttribute" eSuperTypes="#//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormRelationship" eSuperTypes="#//Relationship"/>
 </ecore:EPackage>
