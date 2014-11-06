@@ -20,6 +20,8 @@
 	* Überprüfung ob Compositon EXAKT 2 Conditions referenziert.
 10. invariant validAttributeValueCondition
 	* Überprüfung ob AttributeValueCondition Page EXKLUSIV ODER (xor) PageElement referenziert
+12. WELCOME FORM
+
 
 (+1 chain super typing??)
 https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53388
