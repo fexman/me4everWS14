@@ -11,10 +11,11 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="identifierIsMember"/>
+      <details key="constraints" value="identifierIsMember validBinaryRelationship"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="identifierIsMember" value="self.attributes -> includes(self.identifier) or self.supertypes.attributes -> includes(self.identifier)"/>
+      <details key="validBinaryRelationship" value="self.relationships -> forAll(r: Relationship | r.opposite -> isEmpty() or r.opposite.target = self and r.opposite.opposite = r)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
@@ -58,6 +59,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="validRelationshipBounds"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="validRelationshipBounds" value="self.lowerBound >= 0 and (self.lowerBound &lt;= self.upperBound or self.upperBound = -1)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

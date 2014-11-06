@@ -25,3 +25,4 @@
 
 (+1 chain super typing??)
 https://tuwel.tuwien.ac.at/mod/forum/discuss.php?d=53388
+self.relationships -> forAll(r: Relationship | r.opposite -> isEmpty() or r.opposite.target = self and r.opposite.opposite = r)
