@@ -45,7 +45,7 @@
         eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//Relationship"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//Entity">
+  <eClassifiers xsi:type="ecore:EClass" name="Form">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isWelcomeForm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -62,9 +62,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributePageElement" abstract="true"
-      eSuperTypes="#//PageElement #//Attribute"/>
+      eSuperTypes="#//PageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="RelationshipPageElement" abstract="true"
-      eSuperTypes="#//PageElement #//Relationship">
+      eSuperTypes="#//PageElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="editing_form" lowerBound="1"
         eType="#//Form"/>
   </eClassifiers>
@@ -80,7 +80,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="consists" upperBound="-1"
         eType="#//Column" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Column"/>
   <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
