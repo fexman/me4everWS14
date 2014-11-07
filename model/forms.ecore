@@ -80,7 +80,7 @@
         upperBound="-1" eType="#//Page" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refers_to" lowerBound="1"
-        eType="#//FormEntity"/>
+        eType="#//FormEntity" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Page">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -100,7 +100,7 @@
       eSuperTypes="#//PageElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="editing_form" lowerBound="1"
         eType="#//Form"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refers_to" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refersTo" lowerBound="1"
         eType="#//FormRelationship"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextArea" eSuperTypes="#//AttributePageElement"/>
@@ -129,6 +129,12 @@
     <eLiterals name="Disable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositionCondition" eSuperTypes="#//Condition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="validCompositCondition"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="validCompositCondition" value="self.combinesAttributeValue -> size() + self.combinesComposite -> size() = 2"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="combinesAttributeValue"
         upperBound="2" eType="#//AttributeValueCondition"/>
@@ -136,6 +142,12 @@
         eType="#//CompositionCondition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeValueCondition" eSuperTypes="#//Condition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="validAttributeValueCondition"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="validAttributeValueCondition" value="self.conditionsPageElement -> isEmpty() xor self.conditionsPage -> isEmpty()"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//conditionType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditionsPage" eType="#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditionsPageElement"
@@ -144,12 +156,24 @@
   <eClassifiers xsi:type="ecore:EClass" name="FormEntity" eSuperTypes="#//Entity"/>
   <eClassifiers xsi:type="ecore:EClass" name="FormAttribute" eSuperTypes="#//Attribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="FormRelationship" eSuperTypes="#//Relationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFL_FormModel">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="welcomeFormExistsAndIsUnique"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="welcomeFormExistsAndIsUnique" value="(self.forms.isWelcomeForm -> excluding(false)) -> size() = 1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forms" upperBound="-1"
+        eType="#//Form" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        eType="#//FormEntity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+        eType="#//Condition" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EMFL_EntityModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
         eType="#//Entity" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attibutes" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerations" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enums" upperBound="-1"
         eType="#//Enumeration" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
