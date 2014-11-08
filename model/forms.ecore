@@ -164,6 +164,8 @@
         eType="#//Form" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
         eType="#//Condition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        eType="#//Entity" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EMFL_EntityModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
