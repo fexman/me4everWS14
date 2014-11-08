@@ -55,6 +55,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/isWelcomeForm"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Form/consists"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Form/associated_with"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Form/name"/>
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//Page">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Page/title"/>
@@ -64,9 +66,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//PageElement/elementID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//PageElement/label"/>
     </genClasses>
-    <genClasses ecoreClass="forms.ecore#//AttributePageElement"/>
+    <genClasses ecoreClass="forms.ecore#//AttributePageElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//AttributePageElement/refers_to"/>
+    </genClasses>
     <genClasses ecoreClass="forms.ecore#//RelationshipPageElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//RelationshipPageElement/editing_form"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//RelationshipPageElement/refers_to"/>
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//TextArea"/>
     <genClasses ecoreClass="forms.ecore#//SelectionField"/>
@@ -79,7 +84,9 @@
     <genClasses ecoreClass="forms.ecore#//Tables">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Tables/consists"/>
     </genClasses>
-    <genClasses ecoreClass="forms.ecore#//Column"/>
+    <genClasses ecoreClass="forms.ecore#//Column">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Column/refers_to"/>
+    </genClasses>
     <genClasses ecoreClass="forms.ecore#//Condition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Condition/conditionId"/>
     </genClasses>
@@ -92,6 +99,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//AttributeValueCondition/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//AttributeValueCondition/conditionsPage"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//AttributeValueCondition/conditionsPageElement"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//EMFL_FormModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EMFL_FormModel/forms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EMFL_FormModel/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="forms.ecore#//EMFL_EntityModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EMFL_EntityModel/entities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EMFL_EntityModel/enums"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
