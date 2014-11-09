@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms:EMFL_FormModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:forms="http://www.example.org/forms">
+  <forms title="Publication"
+      description="Form for scientific publications"
+      isWelcomeForm="true"
+      name="1: Publication">
+    <consists
+        title="Publication Details">
+      <contains
+          xsi:type="forms:TextField"
+          elementID="1"
+          label="Title"
+          format="^[a-zA-Z -]+$”">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="2"
+          label="Keywords"
+          format="^([a-zA-Z]+, )+[a-zA-Z]+$”">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.1"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextArea"
+          elementID="3"
+          label="Abstract">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.2"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="4"
+          label="DOI">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.3"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="5"
+          label="Year"
+          format="^[0-9]+$”">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.4"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="6"
+          label="From page"
+          format="^[0-9]+$">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.5"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="7"
+          label="Until page"
+          format="^[0-9]+$”">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.6"/>
+      </contains>
+      <contains
+          xsi:type="forms:SelectionField"
+          elementID="1"
+          label="Publication type">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.7"/>
+      </contains>
+      <contains
+          xsi:type="forms:SelectionField"
+          elementID="2"
+          label="Assigned faculty">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.4"/>
+      </contains>
+      <contains
+          xsi:type="forms:SelectionField"
+          elementID="3"
+          label="Research field">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@attributes.9"/>
+      </contains>
+    </consists>
+    <consists
+        title="Authors">
+      <contains
+          xsi:type="forms:Table"
+          elementID="1"
+          label=""
+          editing_form="//@forms.0">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@relationships.0"/>
+        <consists>
+          <refers_to
+              href="publicationEntityModel.xmi#//@entities.0/@attributes.0"/>
+        </consists>
+        <consists>
+          <refers_to
+              href="publicationEntityModel.xmi#//@entities.0/@attributes.1"/>
+        </consists>
+        <consists>
+          <refers_to
+              href="publicationEntityModel.xmi#//@entities.0/@attributes.2"/>
+        </consists>
+      </contains>
+    </consists>
+    <consists
+        title="Journal">
+      <contains
+          xsi:type="forms:List"
+          elementID="1"
+          label=""
+          editing_form="//@forms.0">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@relationships.2"/>
+      </contains>
+    </consists>
+    <consists
+        title="Book">
+      <contains
+          xsi:type="forms:List"
+          elementID="2"
+          label=""
+          editing_form="//@forms.0">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@relationships.3"/>
+      </contains>
+    </consists>
+    <consists
+        title="Proceedings">
+      <contains
+          xsi:type="forms:List"
+          elementID="3"
+          editing_form="//@forms.0">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.1/@relationships.1"/>
+      </contains>
+    </consists>
+    <associated_with
+        href="publicationEntityModel.xmi#//@entities.1"/>
+  </forms>
+  <forms title="Person"
+      description=""
+      name="2: Person">
+    <consists
+        title="Person Details">
+      <contains
+          xsi:type="forms:TextField"
+          elementID="8"
+          label="First name"
+          format="^[a-zA-Z -]+$”">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="9"
+          label="Last name"
+          format="^[a-zA-Z -]+$”">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.1"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="10"
+          label="E-Mail"
+          format="\w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.2"/>
+      </contains>
+      <contains
+          xsi:type="forms:SelectionField"
+          elementID="4"
+          label="Faculty external">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.3"/>
+      </contains>
+      <contains
+          xsi:type="forms:SelectionField"
+          elementID="5"
+          label="Faculty">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.0/@attributes.4"/>
+      </contains>
+    </consists>
+    <associated_with
+        href="publicationEntityModel.xmi#//@entities.0"/>
+  </forms>
+  <forms title="Journal"
+      description=""
+      name="3: Journal">
+    <consists
+        title="Journal Details">
+      <contains
+          xsi:type="forms:TextField"
+          elementID="11"
+          label="Title"
+          format="^[a-zA-Z -]+$”">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.5/@attributes.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="12"
+          label="Volume"
+          format="^[0-9]+$">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.3/@attributes.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="13"
+          label="Number"
+          format="^[0-9]+$">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.3/@attributes.1"/>
+      </contains>
+    </consists>
+    <associated_with
+        href="publicationEntityModel.xmi#//@entities.3"/>
+  </forms>
+  <forms title="Book"
+      name="4: Book">
+    <consists
+        title="Book Details">
+      <contains
+          xsi:type="forms:TextField"
+          elementID="14"
+          label="Title"
+          format="^[a-zA-Z -]+$">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.5/@attributes.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="15"
+          label="Publisher">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.4/@attributes.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="16"
+          label="ISBN">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.4/@attributes.1"/>
+      </contains>
+    </consists>
+    <associated_with
+        href="publicationEntityModel.xmi#//@entities.4"/>
+  </forms>
+  <forms title="Proceedings"
+      description=""
+      name="5: Proceedings">
+    <consists
+        title="Proceedings Details">
+      <contains
+          xsi:type="forms:TextField"
+          elementID="17"
+          label="Title"
+          format="^[a-zA-Z -]+$">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.5/@attributes.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="18"
+          label="Publisher">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.2/@attributes.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="19"
+          label="Volume"
+          format="^[0-9]+$”">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.2/@attributes.1"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="20"
+          label="ISBN"
+          format="">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.2/@attributes.2"/>
+      </contains>
+      <contains
+          xsi:type="forms:List"
+          elementID="4"
+          label=""
+          editing_form="//@forms.1">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.2/@relationships.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:List"
+          elementID="5"
+          label=""/>
+    </consists>
+  </forms>
+  <forms title="Even"
+      name="6: Event">
+    <consists
+        title="Event Details">
+      <contains
+          xsi:type="forms:TextField"
+          elementID="21"
+          label="Title"
+          format="[a-zA-Z -]+$">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.0"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="22"
+          label="City">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.1"/>
+      </contains>
+      <contains
+          xsi:type="forms:TextField"
+          elementID="23"
+          label="Country">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.2"/>
+      </contains>
+      <contains
+          xsi:type="forms:DateSelectionField"
+          elementID="1"
+          label="From date">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.3"/>
+      </contains>
+      <contains
+          xsi:type="forms:DateSelectionField"
+          elementID="2"
+          label="Until date">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.4"/>
+      </contains>
+      <contains
+          xsi:type="forms:TimeSelectionField"
+          elementID="1"
+          label="Start time">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.5"/>
+      </contains>
+      <contains
+          xsi:type="forms:TimeSelectionField"
+          elementID="2"
+          label="End time">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.6/@attributes.6"/>
+      </contains>
+    </consists>
+    <associated_with
+        href="publicationEntityModel.xmi#//@entities.6"/>
+  </forms>
+  <conditions
+      xsi:type="forms:AttributeValueCondition"
+      conditionId="1"
+      type="Show"
+      conditionsPage="//@forms.0/@consists.2"
+      conditionsPageElement="//@forms.0/@consists.0/@contains.7"/>
+</forms:EMFL_FormModel>

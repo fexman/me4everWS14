@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms:EMFL_EntityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:forms="http://www.example.org/forms">
+  <entities name="Person" identifier="//@entities.0/@attributes.2">
+    <attributes name="firstname" mandatory="true"/>
+    <attributes name="lastname" mandatory="true"/>
+    <attributes name="email" mandatory="true" type="Email"/>
+    <attributes name="external" mandatory="true" type="Boolean"/>
+    <attributes name="faculty" type="None" enumerationType="//@enums.0"/>
+    <relationships name="publications" upperBound="-1" target="//@entities.1" opposite="//@entities.1/@relationships.0"/>
+  </entities>
+  <entities name="Publication" identifier="//@entities.1/@attributes.0">
+    <attributes name="title 1" mandatory="true"/>
+    <attributes name="keywords"/>
+    <attributes name="abstract" type="Text"/>
+    <attributes name="doi"/>
+    <attributes name="year" type="Date"/>
+    <attributes name="fromPage" type="Integer"/>
+    <attributes name="untilPage" type="Integer"/>
+    <attributes name="type" mandatory="true" type="None" enumerationType="//@enums.2"/>
+    <attributes name="assignedFaculty" mandatory="true" type="None" enumerationType="//@enums.0"/>
+    <attributes name="field" mandatory="true" type="None" enumerationType="//@enums.1"/>
+    <relationships name="authors" lowerBound="1" upperBound="-1" target="//@entities.0" opposite="//@entities.0/@relationships.0"/>
+    <relationships name="proceedings" upperBound="1" target="//@entities.2"/>
+    <relationships name="journal" upperBound="1" target="//@entities.3"/>
+    <relationships name="book" upperBound="1" target="//@entities.4"/>
+  </entities>
+  <entities name="Proceedings" identifier="//@entities.5/@attributes.0" supertypes="//@entities.5">
+    <attributes name="publisher" mandatory="true"/>
+    <attributes name="volume" type="Integer"/>
+    <attributes name="isbn"/>
+    <relationships name="editors" upperBound="-1" target="//@entities.0"/>
+    <relationships name="event" lowerBound="1" upperBound="1" target="//@entities.6"/>
+  </entities>
+  <entities name="Journal" identifier="//@entities.5/@attributes.0" supertypes="//@entities.5">
+    <attributes name="volume" mandatory="true" type="Integer"/>
+    <attributes name="number" mandatory="true" type="Integer"/>
+  </entities>
+  <entities name="Book" identifier="//@entities.5/@attributes.0" supertypes="//@entities.5">
+    <attributes name="publisher" mandatory="true"/>
+    <attributes name="isbn"/>
+  </entities>
+  <entities name="PublicationVenue" identifier="//@entities.5/@attributes.0">
+    <attributes name="title 2" mandatory="true"/>
+  </entities>
+  <entities name="Event" identifier="//@entities.6/@attributes.0">
+    <attributes name="title 3" mandatory="true"/>
+    <attributes name="city"/>
+    <attributes name="country"/>
+    <attributes name="fromDate" type="Date"/>
+    <attributes name="untilDate" type="Date"/>
+    <attributes name="startTime" type="Time"/>
+    <attributes name="endTime" type="Time"/>
+  </entities>
+  <enums name="Faculty">
+    <consists name="AP" Value="Faculty of Architecture and Planning"/>
+    <consists name="CE" Value="Faculty of Civil Engineering"/>
+    <consists name="MIE" Value="Faculty of Mechanical and Industrial Engineering"/>
+    <consists name="EEIT" Value="Faculty of Electrical Engineering and Informatino Technology"/>
+    <consists name="MG" Value="Faculty of Mathematics and Geoinformation"/>
+    <consists name="P" Value="Faculty of Physics"/>
+    <consists name="TC" Value="Faculty of Technical Chemistry"/>
+    <consists name="I" Value="Faculty of Informatics"/>
+  </enums>
+  <enums name="ResearchField">
+    <consists name="CSE" Value="Computational Science and Engineering"/>
+    <consists name="QPQT" Value="Quantum Physics and Quantum Technologies"/>
+    <consists name="MM" Value="Materials and Matter"/>
+    <consists name="ICT" Value="Information and Communication Technology"/>
+    <consists name="EE" Value="Energy and Environment"/>
+  </enums>
+  <enums name="PublicationType">
+    <consists name="JA" Value="Journal Article"/>
+    <consists name="BC" Value="Book Chapter"/>
+    <consists name="CP" Value="Conference Paper"/>
+    <consists name="WP" Value="Workshop Paper"/>
+  </enums>
+</forms:EMFL_EntityModel>
