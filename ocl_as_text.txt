@@ -8,20 +8,14 @@
 4. invariant validRelationshipBounds
 	* Überprüfung ob 0 <= lowerbound < upperbound, es sei denn upperbound -1, dann
 		nur 0 <= lowerbound
-
-*** TODO START ***
-
 5. invariant attributePageElementMapsFormEntity
 	* Überprüfung ob Attribute von AttributePageElement von Entity der dazugehörigen Form stammt
 6. invariant relationshipPageElementMapsFormEntity
-	* Überprüfung ob Relationship von RelationshipPageElement von Entity der dazugehörigen Form stammt
+	* Überprüfung ob Relationship von RelationshipPageElement von Entity der dazugehörigen Form stammt	
 7. invariant TableClolumnElementMapsReferencedEntity
 	* Überprüfung ob Attribute von Table-Column von Entity der _REFERENZIERTEN_ Form stammt
 8. invariant validSelectionFieldType
 	* Überprüfung ob SelectionFields Attribut-type Boolean oder Enum ist.
-
-*** TODO END ***
-
 9. invariant validCompositCondition
 	* Überprüfung ob Compositon EXAKT 2 Conditions referenziert.
 10. invariant validAttributeValueCondition

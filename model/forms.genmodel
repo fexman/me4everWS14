@@ -11,7 +11,6 @@
       <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Integer"/>
       <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Date"/>
       <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Time"/>
-      <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Year"/>
       <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Email"/>
       <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/Boolean"/>
       <genEnumLiterals ecoreEnumLiteral="forms.ecore#//AttributeType/None"/>
@@ -81,8 +80,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//TextField/format"/>
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//List"/>
-    <genClasses ecoreClass="forms.ecore#//Tables">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Tables/consists"/>
+    <genClasses ecoreClass="forms.ecore#//Table">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Table/consists"/>
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//Column">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Column/refers_to"/>
@@ -103,6 +102,7 @@
     <genClasses ecoreClass="forms.ecore#//EMFL_FormModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EMFL_FormModel/forms"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EMFL_FormModel/conditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EMFL_FormModel/entities"/>
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//EMFL_EntityModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EMFL_EntityModel/entities"/>
