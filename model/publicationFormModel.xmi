@@ -301,8 +301,14 @@
       <contains
           xsi:type="forms:List"
           elementID="5"
-          label=""/>
+          label=""
+          editing_form="//@forms.5">
+        <refers_to
+            href="publicationEntityModel.xmi#//@entities.2/@relationships.1"/>
+      </contains>
     </consists>
+    <associated_with
+        href="publicationEntityModel.xmi#//@entities.2"/>
   </forms>
   <forms title="Even"
       name="6: Event">
@@ -367,5 +373,36 @@
       conditionId="1"
       type="Show"
       conditionsPage="//@forms.0/@consists.2"
-      conditionsPageElement="//@forms.0/@consists.0/@contains.7"/>
+      value="JA"
+      attributePageElement="//@forms.0/@consists.0/@contains.7"/>
+  <conditions
+      xsi:type="forms:AttributeValueCondition"
+      conditionId="2"
+      type="Show"
+      conditionsPage="//@forms.0/@consists.3"
+      value="BC"
+      attributePageElement="//@forms.0/@consists.0/@contains.7"/>
+  <conditions
+      xsi:type="forms:CompositionCondition"
+      combinesAttributeValue="//@conditions.3 //@conditions.4"/>
+  <conditions
+      xsi:type="forms:AttributeValueCondition"
+      conditionId="3"
+      type="Show"
+      conditionsPage="//@forms.0/@consists.4"
+      value="CP"
+      attributePageElement="//@forms.0/@consists.0/@contains.7"/>
+  <conditions
+      xsi:type="forms:AttributeValueCondition"
+      conditionId="4"
+      type="Show"
+      conditionsPage="//@forms.0/@consists.4"
+      value="WP"
+      attributePageElement="//@forms.0/@consists.0/@contains.7"/>
+  <conditions
+      xsi:type="forms:AttributeValueCondition"
+      conditionId="5"
+      conditionsPageElement="//@forms.1/@consists.0/@contains.4"
+      value="true"
+      attributePageElement="//@forms.1/@consists.0/@contains.3"/>
 </forms:EMFL_FormModel>
