@@ -76,9 +76,9 @@
       <details key="constraints" value="attributePageElementMapsFormEntity relationshipPageElementMapsFormEntity tableClolumnElementMapsReferencedEntity"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="attributePageElementMapsFormEntity" value="(self.consists.contains -> selectByKind(AttributePageElement)).refers_to -> forAll(a: Attribute | self.associated_with.attributes -> includes(a))"/>
+      <details key="attributePageElementMapsFormEntity" value="(self.consists.contains -> selectByKind(AttributePageElement)).refers_to -> forAll(a: Attribute | self.associated_with.attributes -> includes(a) or self.associated_with.supertypes -> forAll(e: Entity | e.attributes -> includes(a)))"/>
       <details key="relationshipPageElementMapsFormEntity" value="(self.consists.contains -> selectByKind(RelationshipPageElement)).refers_to -> forAll(r: Relationship | self.associated_with.relationships -> includes(r))"/>
-      <details key="tableClolumnElementMapsReferencedEntity" value="(self.consists.contains -> selectByKind(Table)).consists.refers_to -> forAll(a: Attribute | self.associated_with.attributes -> includes(a))"/>
+      <details key="tableClolumnElementMapsReferencedEntity" value="(self.consists.contains -> selectByKind(Table)).consists.refers_to -> forAll(a: Attribute | self.associated_with.attributes -> includes(a) or associated_with.supertypes -> forAll(e: Entity | e.attributes -> includes(a)))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -116,7 +116,7 @@
       <details key="constraints" value="validSelectionFieldType"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="validSelectionFieldType" value="self.refers_to.type.toString() = 'Boolean' or not(self.refers_to.enumerationType.oclIsUndefined())"/>
+      <details key="validSelectionFieldType" value="self.oclAsType(AttributePageElement).refers_to.type.toString().toLowerCase() = 'boolean' or self.refers_to.type.toString().toLower() = 'boolean' or not(self.refers_to.enumerationType.oclIsUndefined())"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DateSelectionField" eSuperTypes="#//AttributePageElement"/>
