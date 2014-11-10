@@ -116,7 +116,7 @@
       <details key="constraints" value="validSelectionFieldType"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="validSelectionFieldType" value="self.oclAsType(AttributePageElement).refers_to.type.toString().toLowerCase() = 'boolean' or self.refers_to.type.toString().toLower() = 'boolean' or not(self.refers_to.enumerationType.oclIsUndefined())"/>
+      <details key="validSelectionFieldType" value="self.refers_to.type = AttributeType::Boolean xor not self.refers_to.enumerationType.oclIsUndefined()"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DateSelectionField" eSuperTypes="#//AttributePageElement"/>
